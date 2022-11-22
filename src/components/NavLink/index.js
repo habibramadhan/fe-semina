@@ -1,10 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { Nav } from 'react-bootstrap'
 
 export default function NavLink({to, children}) {
-  return (
-    <li>
-    <Link to={to}>{children}</Link>
-    </li>
-  )
+  const navigate = useNavigate();
+  return <Nav.Link onClick={() => navigate(to)}>{children}</Nav.Link>;
 }
